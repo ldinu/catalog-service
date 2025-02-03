@@ -1,7 +1,6 @@
 package com.bookshop.catalogservice.domain.repositories;
 
-import com.bookshop.catalogservice.domain.model.Book;
-import org.springframework.stereotype.Repository;
+import com.bookshop.catalogservice.domain.repositories.entities.Book;
 
 import java.util.Optional;
 
