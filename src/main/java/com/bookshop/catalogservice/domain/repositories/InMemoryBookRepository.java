@@ -1,6 +1,5 @@
 package com.bookshop.catalogservice.domain.repositories;
 
-import com.bookshop.catalogservice.domain.model.BookDto;
 import com.bookshop.catalogservice.domain.repositories.entities.Book;
 import org.springframework.stereotype.Repository;
 
@@ -30,7 +29,9 @@ public class InMemoryBookRepository implements BookRepository {
 
     @Override
     public Book save(Book book) {
-        return booksByIsbn.put(book.isbn(), book);
+        final String isbn = book.isbn();
+        booksByIsbn.put(isbn, book);
+        return booksByIsbn.get(isbn);
     }
 
     @Override

@@ -22,7 +22,8 @@ class CatalogServiceApplicationTest {
                 .bodyValue(expectedBook)
                 .exchange()
                 .expectStatus().isCreated()
-                .expectBody(BookDto.class).value(actualBook -> assertResponse(actualBook, expectedBook));
+                .expectBody(BookDto.class)
+                .value(actualBook -> assertResponse(actualBook, expectedBook));
     }
 
     private void assertResponse(BookDto actualBook, BookDto expectedBook) {
