@@ -29,13 +29,15 @@ class BookJsonTest {
     @Test
     void testDeserialize() throws IOException {
         String json = """
-                "isbn": "1234567890",
-                "title": "Opera Omnia",
-                "author": "Epictetus",
-                "price": 89.99
+                {
+                    "isbn": "1234567890",
+                    "title": "Opera Omnia",
+                    "author": "Epictetus",
+                    "price": 89.99
+                }
                 """;
         assertThat(jacksonTester.parse(json))
                 .usingRecursiveComparison()
-                .isEqualTo(new BookDto("1234567890", "Opera Omnia", "Epcitetus", 89.99));
+                .isEqualTo(new BookDto("1234567890", "Opera Omnia", "Epictetus", 89.99));
     }
 }
