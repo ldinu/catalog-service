@@ -23,7 +23,7 @@ jobs:
         id: scan
         with:
           path: "${{ github.workspace }}"
-          fail-build: 'false'
+          fail-build: 'true'
           severity-cutoff: 'high'
       - name: Upload vulnerability report
         uses: github/codeql-action/upload-sarif@v3
@@ -32,5 +32,5 @@ jobs:
           sarif_file: ${{ steps.scan.outputs.sarif }}
       - name: Build, unit tests and integration tests
         run:
-          chmod +x gradlew
-          ./gradlew build
+          "chmod +x gradlew
+          ./gradlew build"
